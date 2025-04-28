@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --cosmic-bg-light: #f8fafc;
+    --cosmic-bg-dark: #0f172a;
+    --cosmic-text-light: #1e293b;
+    --cosmic-text-dark: #f8fafc;
+  }
+
+  body {
+    @apply transition-colors duration-300;
+  }
+
+  .dark body {
+    background-color: var(--cosmic-bg-dark);
+    color: var(--cosmic-text-dark);
+  }
+
+  body {
+    background-color: var(--cosmic-bg-light);
+    color: var(--cosmic-text-light);
+  }
+}
+
+/* FullCalendar Dark Theme */
+.fc-dark {
+  --fc-border-color: rgba(75, 85, 99, 0.3);
+  --fc-button-text-color: #fff;
+  --fc-button-bg-color: rgba(139, 92, 246, 0.2);
+  --fc-button-border-color: rgba(139, 92, 246, 0.3);
+  --fc-button-hover-bg-color: rgba(139, 92, 246, 0.3);
+  --fc-button-hover-border-color: rgba(139, 92, 246, 0.4);
+  --fc-button-active-bg-color: rgba(139, 92, 246, 0.4);
+  --fc-button-active-border-color: rgba(139, 92, 246, 0.5);
+  --fc-event-bg-color: rgba(139, 92, 246, 0.2);
+  --fc-event-border-color: rgba(139, 92, 246, 0.3);
+  --fc-event-text-color: #fff;
+  --fc-page-bg-color: transparent;
+  --fc-neutral-bg-color: rgba(31, 41, 55, 0.5);
+  --fc-neutral-text-color: #fff;
+  --fc-today-bg-color: rgba(139, 92, 246, 0.1);
+}
+
+.fc-dark .fc-timegrid-slot-label,
+.fc-dark .fc-timegrid-axis-cushion,
+.fc-dark .fc-daygrid-day-number,
+.fc-dark .fc-col-header-cell-cushion {
+  color: #fff;
+}
+
+.fc-dark .fc-timegrid-slot {
+  border-color: rgba(75, 85, 99, 0.2);
+}
+
+.fc-dark .fc-timegrid-now-indicator-line {
+  border-color: rgba(139, 92, 246, 0.8);
+}
+
+.fc-dark .fc-timegrid-now-indicator-arrow {
+  border-color: rgba(139, 92, 246, 0.8);
+  background-color: rgba(139, 92, 246, 0.8);
+}
+
+/* FullCalendar Light Theme */
+.fc-light {
+  --fc-border-color: rgba(226, 232, 240, 0.3);
+  --fc-button-text-color: #1e293b;
+  --fc-button-bg-color: rgba(139, 92, 246, 0.1);
+  --fc-button-border-color: rgba(139, 92, 246, 0.2);
+  --fc-button-hover-bg-color: rgba(139, 92, 246, 0.2);
+  --fc-button-hover-border-color: rgba(139, 92, 246, 0.3);
+  --fc-button-active-bg-color: rgba(139, 92, 246, 0.3);
+  --fc-button-active-border-color: rgba(139, 92, 246, 0.4);
+  --fc-event-bg-color: rgba(139, 92, 246, 0.1);
+  --fc-event-border-color: rgba(139, 92, 246, 0.2);
+  --fc-event-text-color: #1e293b;
+  --fc-page-bg-color: transparent;
+  --fc-neutral-bg-color: rgba(241, 245, 249, 0.5);
+  --fc-neutral-text-color: #1e293b;
+  --fc-today-bg-color: rgba(139, 92, 246, 0.05);
+}
+
+/* Common FullCalendar Styles */
+.fc {
+  @apply h-[calc(100vh-12rem)];
+}
+
+.fc .fc-toolbar-title {
+  @apply text-xl font-semibold;
+}
+
+.fc .fc-button {
+  @apply transition-colors duration-300;
+}
+
+.fc .fc-event {
+  @apply cursor-pointer transition-opacity duration-300 hover:opacity-80;
+}
+
+.fc .fc-event-main {
+  @apply p-1;
+}
+
+.fc .fc-timegrid-slot-label {
+  @apply text-sm;
+}
+
+.fc .fc-timegrid-axis-cushion {
+  @apply text-sm;
+}
+
+/* Animation Classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* React Select Custom Styles */
+.react-select__control {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.react-select__value-container {
+  @apply text-white;
+}
+
+.react-select__input {
+  @apply text-white;
+}
+
+.react-select__menu {
+  @apply bg-gray-800 border border-gray-700;
+}
+
+.react-select__option {
+  @apply text-white hover:bg-purple-500/20;
+}
+
+.react-select__single-value {
+  @apply text-white;
+}
+
+/* DatePicker Cosmic Theme */
+.cosmic-datepicker {
+  @apply bg-gray-800 border-2 border-purple-500/30 rounded-lg shadow-lg;
+}
+
+.cosmic-datepicker .react-datepicker__header {
+  @apply bg-gray-900 border-purple-500/30;
+}
+
+.cosmic-datepicker .react-datepicker__current-month,
+.cosmic-datepicker .react-datepicker__day-name,
+.cosmic-datepicker .react-datepicker__day {
+  @apply text-white;
+}
+
+.cosmic-datepicker .react-datepicker__day:hover {
+  @apply bg-purple-500 rounded-full;
+}
+
+.cosmic-datepicker .react-datepicker__day--selected {
+  @apply bg-purple-600 rounded-full;
+}
+
+.cosmic-datepicker .react-datepicker__day--keyboard-selected {
+  @apply bg-purple-500 rounded-full;
+}
+
+/* Line Clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
